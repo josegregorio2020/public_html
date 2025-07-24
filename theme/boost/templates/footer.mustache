@@ -1,0 +1,158 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template theme_boost/footer
+
+    Page footer.
+
+    Example context (json):
+    {
+        "output": {
+            "page_doc_link": "Help and documentation",
+            "supportemail": "<a href=\"#\">Contact site support</a>",
+            "has_popover_links": true,
+            "services_support": "Services and support",
+            "login_info": "You are logged in as cute kitten",
+            "moodle_release": "90210"
+        }
+    }
+}}
+
+<footer id="page-footer" class="footer-popover bg-white">
+    <div data-region="footer-container-popover">
+        <button class="btn btn-icon bg-secondary icon-no-margin btn-footer-popover" data-action="footer-popover" aria-label="{{#str}}showfooter, theme_boost{{/str}}">
+            {{#pix}}e/question, core{{/pix}}
+        </button>
+    </div>
+    <div class="footer-content-popover container" data-region="footer-content-popover">
+        {{# output.has_popover_links }}
+            <div class="footer-section p-3 border-bottom">
+                {{# output.page_doc_link }}
+                    <div class="footer-support-link">{{{ output.page_doc_link }}}</div>
+                {{/ output.page_doc_link }}
+
+                {{# output.services_support_link }}
+                    <div class="footer-support-link">{{{ output.services_support_link }}}</div>
+                {{/ output.services_support_link }}
+
+                {{# output.supportemail }}
+                    <div class="footer-support-link">{{{ output.supportemail }}}</div>
+                {{/ output.supportemail }}
+            </div>
+        {{/ output.has_popover_links }}
+        <div class="footer-section p-3 border-bottom">
+            <div class="logininfo">
+                {{{ output.login_info }}}
+            </div>
+            <div class="tool_usertours-resettourcontainer">
+            </div>
+
+            {{{ output.standard_footer_html }}}
+            {{{ output.standard_end_of_body_html }}}
+        </div>
+        <div class="footer-section p-3">
+            <div>{{#str}}poweredbymoodle, core{{/str}}</div>
+            {{#output.moodle_release}}
+                <div>
+                    {{#str}}version, core{{/str}} {{{ output.moodle_release }}}
+                </div>
+            {{/output.moodle_release}}
+        </div>
+    </div>
+
+    <div class="footer-content-debugging footer-light bg-light text-dark">
+    <div class="footer-container">
+        <p>© 2025 Todos los Derechos Reservados.</p>
+        <p>Desarrollado por <strong>Secretari­a de las TIC - Ibague </strong></p>
+        <div class="footer-social">
+            <a href="#" target="_blank" aria-label="Facebook">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="currentColor" d="M22 12.07C22 6.48 17.52 2 12 2S2 6.48 2 12.07c0 4.97 3.64 9.11 8.38 9.93V14.9h-2.5v-2.83h2.5v-2.16c0-2.48 1.5-3.84 3.73-3.84 1.08 0 2.21.19 2.21.19v2.44h-1.24c-1.22 0-1.6.76-1.6 1.55v1.82h2.72l-.43 2.83h-2.29v7.1c4.74-.82 8.38-4.96 8.38-9.93Z"/>
+                </svg>
+            </a>
+            <a href="#" target="_blank" aria-label="Twitter">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="currentColor" d="M22.46 6c-.77.35-1.6.58-2.46.69a4.27 4.27 0 0 0 1.89-2.34 8.59 8.59 0 0 1-2.7 1.04 4.3 4.3 0 0 0-7.32 3.91 12.18 12.18 0 0 1-8.85-4.48 4.3 4.3 0 0 0 1.33 5.74 4.3 4.3 0 0 1-1.95-.54v.05c0 2.05 1.46 3.75 3.4 4.14a4.3 4.3 0 0 1-1.94.07 4.3 4.3 0 0 0 4.01 3 8.63 8.63 0 0 1-5.34 1.84A8.64 8.64 0 0 1 2 19.74a12.15 12.15 0 0 0 6.58 1.93c7.89 0 12.21-6.54 12.21-12.21v-.55A8.58 8.58 0 0 0 22.46 6Z"/>
+                </svg>
+            </a>
+            <a href="#" target="_blank" aria-label="Instagram">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="currentColor" d="M12 2.16c3.2 0 3.58.01 4.85.07 3.26.15 4.78 1.69 4.93 4.93.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.26-1.69 4.78-4.93 4.93-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.78-1.69-4.93-4.93-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.15-3.26 1.69-4.78 4.93-4.93 1.27-.06 1.65-.07 4.85-.07Zm0-2.16C8.74 0 8.32 0 7.05.06 3.23.22.22 3.23.06 7.05 0 8.32 0 8.74 0 12s0 3.68.06 4.95c.16 3.82 3.17 6.83 7 7 1.27.06 1.69.06 4.95.06s3.68 0 4.95-.06c3.82-.16 6.83-3.17 7-7 .06-1.27.06-1.69.06-4.95s0-3.68-.06-4.95c-.16-3.82-3.17-6.83-7-7C15.68 0 15.26 0 12 0Zm0 5.84a6.16 6.16 0 1 1 0 12.32A6.16 6.16 0 0 1 12 5.84Zm0 10.16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm6.4-10.88a1.44 1.44 0 1 1 2.88 0 1.44 1.44 0 0 1-2.88 0Z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>
+
+<style>
+/* Estilos encapsulados dentro de .footer-content-debugging */
+.footer-content-debugging {
+    padding: 20px;
+    background: #f8f9fa; /* Fondo claro */
+    color: #3962AE; /* Texto oscuro */
+    text-align: center;
+    font-size: 14px;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.footer-container p {
+    color: #3962AE; /* Texto oscuro */
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.footer-social a {
+    color: #3962AE;
+    width: 24px;
+    height: 24px;
+    transition: color 0.3s;
+}
+
+.footer-social a:hover {
+    color: #007bff; /* Cambio de color en hover */
+}
+
+/* ðŸ“± Responsivo */
+@media (max-width: 768px) {
+    .footer-content-debugging {
+        font-size: 12px;
+        padding: 15px;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+}
+</style>
+
+
+</footer>
+{{#js}}
+require(['theme_boost/footer-popover'], function(FooterPopover) {
+    FooterPopover.init();
+});
+{{/js}}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API de Programadores - AprendeTIC</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #0073e6;
+            text-align: center;
+        }
+        .endpoint {
+            border-left: 5px solid #0073e6;
+            background: #f9f9f9;
+            padding: 10px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .method {
+            font-weight: bold;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .get { background: #28a745; }
+        .post { background: #007bff; }
+        .put { background: #ffc107; }
+        .delete { background: #dc3545; }
+        code {
+            background: #eef;
+            display: block;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .highlight {
+            background: #ffeb3b;
+            color: #d32f2f;
+            padding: 10px;
+            font-weight: bold;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>API de Programadores - AprendeTIC</h1>
+        <p>Esta API proporciona funcionalidades para gestionar programadores y usuarios en la plataforma AprendeTIC. Se incluyen rutas protegidas mediante token y sesión de Moodle.</p>
+
+        <h2>📌 Base URL</h2>
+        <code>https://ibagueaprendetic.ibague.gov.co/api/v1/</code>
+
+        <h2>📌 Endpoints</h2>
+
+        <div class="endpoint">
+            <span class="method get">GET</span>
+            <strong>Listar Usuarios con Paginación</strong>
+            <code>https://ibagueaprendetic.ibague.gov.co/api/v1/GetUsers.php?page=3</code>
+            <p><strong>Parámetros:</strong></p>
+            <ul>
+                <li><code>page</code> (opcional, int): Número de página.</li>
+                <li><code>limit</code> (opcional, int): Cantidad de registros por página.</li>
+            </ul>
+            <p><strong>Respuesta:</strong></p>
+            <code>{ "status": "success", "total": 100, "page": 1, "limit": 10, "users": [ {...} ] }</code>
+        </div>
+
+        <div class="endpoint">
+            <span class="method get">GET</span>
+            <strong>Listar Usuarios de Moodle</strong>
+            <code>https://ibagueaprendetic.ibague.gov.co/api/v1/GetUsers.php</code>
+        </div>
+
+        <div class="endpoint">
+            <span class="method get">GET</span>
+            <strong>Login Programador</strong>
+            <code>https://ibagueaprendetic.ibague.gov.co/api/v1/Auth.php</code>
+            <p><strong>Encabezados:</strong></p>
+            <code>Authorization: Bearer {token}</code>
+            <p><strong>Respuesta:</strong></p>
+            <code>{ "status": "success", "token": "...", "expires_at": "2024-03-01 12:00:00" }</code>
+        </div>
+
+        <div class="highlight">
+            ⚠️ Es necesario crear un token en Moodle para manejar la seguridad del API, evitar riesgos de seguridad y evitar que personas no autorizadas ingresen y registren nuevos programadores o les asignen permisos no autorizados por el administrador del Moodle.
+        </div>
+
+        <div class="endpoint">
+            <span class="method post">POST</span>
+            <strong>Crear Programador</strong>
+            <code>https://ibagueaprendetic.ibague.gov.co/api/v1/Developers.php</code>
+            <p><strong>Body JSON:</strong></p>
+            <code>{ "username": "dev_user", "password": "secure_pass" }</code>
+            <p><strong>Respuesta:</strong></p>
+            <code>{ "status": "success", "message": "Programador creado" }</code>
+        </div>
+
+        <div class="endpoint">
+            <span class="method get">GET</span>
+            <strong>Listar Programadores</strong>
+            <code>https://ibagueaprendetic.ibague.gov.co/api/v1/GetUsers.php</code>
+        </div>
+
+        <div class="endpoint">
+            <span class="method put">PUT</span>
+            <strong>Actualizar Permisos de Programadores</strong>
+            <code>https://ibagueaprendetic.ibague.gov.co/api/v1/Developers.php</code>
+            <p><strong>Body JSON:</strong></p>
+            <code>{ "id": 1, "status": "active" }</code>
+            <p><strong>Respuesta:</strong></p>
+            <code>{ "status": "success", "message": "Estado actualizado" }</code>
+        </div>
+
+        <h2>📌 Seguridad</h2>
+        <p>La mayoría de las rutas están protegidas mediante token o sesión de Moodle.</p>
+        <p>Se recomienda utilizar el encabezado:</p>
+        <code>Authorization: Bearer {token}</code>
+
+        <div class="footer">
+            <p>📌 <strong>Autor:</strong> Jose Palacio</p>
+        </div>
+    </div>
+</body>
+</html>

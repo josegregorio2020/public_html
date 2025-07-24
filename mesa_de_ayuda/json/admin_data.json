@@ -1,0 +1,33 @@
+{
+    "info": {
+        "description": "Bienvenido a la Mesa de Ayuda de AprendeTIC. Aquí encontrarás toda la información necesaria para resolver tus inquietudes.",
+        "contact": {
+            "phone": "+57 123 456 7890",
+            "whatsapp": "+57 987 654 3210",
+            "email": "ayuda@aprendetic.gov.co",
+            "social": {
+                "Facebook": "https://www.facebook.com/AprendeTIC",
+                "Twitter": "https://twitter.com/AprendeTIC",
+                "Instagram": "https://www.instagram.com/AprendeTIC"
+            }
+        }
+    },
+    "faqs": [
+        {
+            "question": "¿Cómo puedo recuperar mi contraseña?",
+            "answer": "Si olvidaste tu contraseña, ve a la página de inicio de sesión y haz clic en '¿Olvidaste tu contraseña?'. Sigue las instrucciones para restablecerla."
+        },
+        {
+            "question": "¿Cómo puedo inscribirme en un curso?",
+            "answer": "Para inscribirte en un curso, accede a tu cuenta, busca el curso que te interesa y haz clic en 'Inscribirme'."
+        },
+        {
+            "question": "¿Dónde puedo encontrar material de soporte?",
+            "answer": "Puedes encontrar material de soporte en la sección 'Documentos' dentro de cada curso al que estés inscrito."
+        },
+        {
+            "question": "¿Qué hago si encuentro un error en la plataforma?",
+            "answer": "Si encuentras un error, por favor, repórtalo a través del formulario de contacto o escríbenos al correo ayuda@aprendetic.gov.co."
+        }
+    ]
+}
