@@ -4,28 +4,23 @@ unset($CFG);
 global $CFG;
 $CFG = new stdClass();
 
-$CFG->dbtype    = 'mysqli';
+$CFG->dbtype    = 'mariadb';
 $CFG->dblibrary = 'native';
-$CFG->dbhost    = '10.10.2.7';
+$CFG->dbhost    = 'localhost';
 $CFG->dbname    = 'aprendetic_prod';
-$CFG->dbuser    = 'aprendetic';
-$CFG->dbpass    = 'pg9$tbR8Yy!n';
+$CFG->dbuser    = 'root';
+$CFG->dbpass    = '';
 $CFG->prefix    = 'mdl_';
 $CFG->dboptions = array (
   'dbpersist' => 0,
-  'dbport' => '',
+  'dbport' => 3306,
   'dbsocket' => '',
-  'dbcollation' => 'utf8mb4_general_ci',
+  'dbcollation' => 'utf8mb4_unicode_ci',
 );
 
-$CFG->wwwroot   = 'https://ibagueaprendetic.ibague.gov.co';
-$CFG->dataroot  = '/var/www/aprendetic/moodledata';
+$CFG->wwwroot   = 'http://localhost';
+$CFG->dataroot  = 'C:\\Users\\josepalacio\\Downloads\\MoodleWindowsInstaller-latest-401\\server\\moodledata';
 $CFG->admin     = 'admin';
-$CFG->upgradekey = 'Aprendetic2024.';
-
-$CFG->debug = 0;
-$CFG->debugdisplay = false;
-//$CFG->debuglog = '/path/to/your/moodle/datafolder/debug.log';  // Log errors to a file
 
 $CFG->directorypermissions = 0777;
 
